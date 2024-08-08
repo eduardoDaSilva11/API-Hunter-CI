@@ -1,0 +1,42 @@
+[
+    {
+        "email": "dubs@it.com",
+        "first_name": "Dubs",
+        "last_name": "Shelb",
+        "position": "Cofounder",
+        "company": "It",
+        "company_industry": "Internet e telecomunicações"
+    },
+    {
+        "email": "susan@tesla.com",
+        "first_name": "Susan",
+        "last_name": "Smith",
+        "position": "Product Manager",
+        "company": "Tesla",
+        "company_industry": "Automotivo"
+    },
+    {
+        "email": "john@amazon.com",
+        "first_name": "John",
+        "last_name": "Doe",
+        "position": "Software Engineer",
+        "company": "Amazon",
+        "company_industry": "Comércio Eletrônico"
+    },
+    {
+        "email": "emily@apple.com",
+        "first_name": "Emily",
+        "last_name": "Johnson",
+        "position": "Design Lead",
+        "company": "Apple",
+        "company_industry": "Tecnologia"
+    },
+    {
+        "email": "michael@google.com",
+        "first_name": "Michael",
+        "last_name": "Brown",
+        "position": "Data Analyst",
+        "company": "Google",
+        "company_industry": "Internet e telecomunicações"
+    }
+]

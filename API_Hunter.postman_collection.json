@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "f40022c1-a202-4c46-8f4f-ff9cf5daace6",
+		"name": "API Hunter",
+		"description": "Criação de testes da API Hunter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17256994",
+		"_collection_link": "https://health-check-hunter-api.postman.co/workspace/(Health-Check)-Hunter-API~2fef0933-048d-4cb5-a76d-00740d8aafb9/collection/17256994-f40022c1-a202-4c46-8f4f-ff9cf5daace6?action=share&source=collection_link&creator=17256994"
+	},
+	"item": [
+		{
+			"name": "Leads",
+			"item": [
+				{
+					"name": "create_leads",
+					"item": [
+						{
+							"name": "create_leads",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.iterationData.get(\"email\")\r",
+											"pm.iterationData.get(\"first_name\")\r",
+											"pm.iterationData.get(\"last_name\")\r",
+											"pm.iterationData.get(\"position\")\r",
+											"pm.iterationData.get(\"company\")\r",
+											"pm.iterationData.get(\"company_industry\")"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"first_name\": \"{{first_name}}\",\r\n    \"last_name\": \"{{last_name}}\",\r\n    \"position\": \"{{position}}\",\r\n    \"company\": \"{{company}}\",\r\n    \"company_industry\": \"{{company_industry}}\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}leads",
+									"host": [
+										"{{base_url}}leads"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get_leads",
+					"item": [
+						{
+							"name": "get_all_leads",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}leads",
+									"host": [
+										"{{base_url}}leads"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_lead_id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}leads/{{id_lead}}",
+									"host": [
+										"{{base_url}}leads"
+									],
+									"path": [
+										"{{id_lead}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "update_leads",
+					"item": [
+						{
+							"name": "update_leads",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \" email \": \"duh.update@tesla.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}leads/{{id_lead}}",
+									"host": [
+										"{{base_url}}leads"
+									],
+									"path": [
+										"{{id_lead}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "delete_leads",
+					"item": [
+						{
+							"name": "delete_leads",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}leads/{{id_lead}}",
+									"host": [
+										"{{base_url}}leads"
+									],
+									"path": [
+										"{{id_lead}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "Pasta de suites de testes leads"
+		},
+		{
+			"name": "Leads-Lists",
+			"item": [
+				{
+					"name": "create_LeadsLists",
+					"item": [
+						{
+							"name": "create_leadsLists",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"pm.iterationData.get('name')\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{name}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}leads_lists",
+									"host": [
+										"{{base_url}}leads_lists"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get_leadsLists",
+					"item": [
+						{
+							"name": "get_all_leadsLists",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}leads_lists",
+									"host": [
+										"{{base_url}}leads_lists"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_leadsList_Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}leads_lists/{{id_leadsLists}}",
+									"host": [
+										"{{base_url}}leads_lists"
+									],
+									"path": [
+										"{{id_leadsLists}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "update_leadsLists",
+					"item": [
+						{
+							"name": "update_leadsLists",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Lista editada\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}leads_lists/{{id_leadsLists}}",
+									"host": [
+										"{{base_url}}leads_lists"
+									],
+									"path": [
+										"{{id_leadsLists}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "delete_leadsLists",
+					"item": [
+						{
+							"name": "delete_leadsLists",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}leads_lists/{{id_leadsLists}}",
+									"host": [
+										"{{base_url}}leads_lists"
+									],
+									"path": [
+										"{{id_leadsLists}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "Pasta de suíte de testes de Leads-List"
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "api_key",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "a5636007267c736ec9670568ab0a1dcd2758d1a4",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"/*\r",
+					"Teste para requisições GET\r",
+					"Status code 200\r",
+					"String Ok no response code\r",
+					"*/\r",
+					"if (pm.request.method === 'GET') {\r",
+					"\r",
+					"    pm.test(\"Status code is 200\", function () {\r",
+					"        pm.response.to.have.status(200);\r",
+					"    });\r",
+					"\r",
+					"    pm.test(\"Status code name has string 'OK'\", function () {\r",
+					"        pm.response.to.have.status(\"OK\");\r",
+					"    });\r",
+					"}\r",
+					"\r",
+					"/*\r",
+					"Teste para requisições GET ou POST\r",
+					"Executado em menos de 2 segundos\r",
+					"*/\r",
+					"if (pm.request.method === 'GET' || 'POST') {\r",
+					"\r",
+					"    pm.test(\"Response time is less than 2000ms\", function () {\r",
+					"        pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+					"    });\r",
+					"}\r",
+					"\r",
+					"/*\r",
+					"Teste para requisições POST\r",
+					"Status code 200, 201, 202\r",
+					"String Created no response code\r",
+					"*/\r",
+					"if (pm.request.method === 'POST'){\r",
+					"\r",
+					"    pm.test(\"Successful POST request\", function () {\r",
+					"        pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+					"    });\r",
+					"\r",
+					"    pm.test(\"Status code name has string\", function () {\r",
+					"        pm.response.to.have.status(\"Created\");\r",
+					"    });\r",
+					"\r",
+					"    const responsejsonLeads = pm.response.json()\r",
+					"    if (pm.info.requestName === 'create_leads') {\r",
+					"        pm.environment.set('id_lead', responsejsonLeads.data.id);\r",
+					"    } \r",
+					"\r",
+					"    const responsejsonLeadsList = pm.response.json()\r",
+					"    if (pm.info.requestName === 'create_leadsLists') {\r",
+					"        pm.environment.set('id_leadsLists', responsejsonLeadsList.data.id);\r",
+					"    }\r",
+					"}\r",
+					"\r",
+					"/* Testes para requisições DELETE ou PUT\r",
+					"Response code 204\r",
+					"String \"No Content\" no response code\r",
+					"*/\r",
+					"if (pm.request.method === \"DELETE\" || pm.request.method === 'PUT') {\r",
+					"\r",
+					"    pm.test(\"Status code name has string 'No Content'\", function () {\r",
+					"        pm.response.to.have.status(\"No Content\");\r",
+					"    });\r",
+					"\r",
+					"    pm.test(\"Status code is 204\", function () {\r",
+					"        pm.response.to.have.status(204);\r",
+					"    });\r",
+					"}\r",
+					""
+				]
+			}
+		}
+	]
+}
