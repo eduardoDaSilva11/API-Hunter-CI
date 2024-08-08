@@ -35,4 +35,4 @@ jobs:
       - name: Step 2 Install Newman-Reporter-html
         run: |
           sudo npm install -g newman-reporter-html
-          newman run ./api_hunter -e ./api_hunter-env.json --reporters cli,html --reporter-html-template templates/htmlreqres.hbs --reporter-html-export exports_reports/export_API_Hunter
+          newman run ./api_hunter -e ./api_hunter-env.json --reporters cli,html --reporter-html-template ./htmlreqres.hbs --reporter-html-export ./result/report.html
