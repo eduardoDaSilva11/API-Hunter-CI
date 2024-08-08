@@ -33,6 +33,12 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Step 2 Install Newman-Reporter-html
-        run: |
-          sudo npm install -g newman-reporter-html
-          newman run -d dados-leads.json ./api_hunter.json -e ./api_hunter-env.json --reporters cli,html --reporter-html-template ./htmlreqres.hbs --reporter-html-export ./result/report.html
+        run: sudo npm install -g newman-reporter-html
+
+        # Runs a set of commands using the runners shell
+      - name: Step 3 Execute Colecction
+        run: newman run -d dados-leads.json ./api_hunter.json -e ./api_hunter-env.json --reporters cli,html --reporter-html-template ./htmlreqres.hbs --reporter-html-export ./result/report.html
+
+      # Runs a set of commands using the runners shell
+      - name: Step 4 Archive production artifacts
+        run: actions/upload-artifact@v2
